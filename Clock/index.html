@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Digital Clock</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="clock-app">
+		<section class="clock-card" aria-live="polite">
+			<div class="card-topline">
+				<span class="status-dot"></span>
+				<span>Local time</span>
+			</div>
+
+			<div class="time-display">
+				<span id="hours">00</span><span class="colon">:</span><span id="minutes">00</span><span class="colon">:</span><span id="seconds">00</span>
+			</div>
+
+			<div class="date-display">
+				<span id="weekday">Monday</span>
+				<span class="date-separator">/</span>
+				<span id="day">01</span>
+				<span id="month">January</span>
+				<span id="year">2026</span>
+			</div>
+
+			<div class="date-grid">
+				<div><span>Day</span><strong id="dayLabel">01</strong></div>
+				<div><span>Month</span><strong id="monthLabel">January</strong></div>
+				<div><span>Year</span><strong id="yearLabel">2026</strong></div>
+			</div>
+		</section>
+
+		<section class="international-panel" aria-live="polite">
+			<div class="international-heading">
+				<p class="eyebrow">Around the world</p>
+				<h2>International time</h2>
+			</div>
+			<div class="world-clocks">
+				<article class="world-clock">
+					<div class="country-line"><span class="country-dot"></span><span>United Kingdom</span></div>
+					<strong id="londonTime">00:00:00</strong>
+					<span class="world-date" id="londonDate">Monday, 01 January</span>
+					<span class="city-label">London · GMT</span>
+				</article>
+				<article class="world-clock">
+					<div class="country-line"><span class="country-dot"></span><span>United States</span></div>
+					<strong id="newYorkTime">00:00:00</strong>
+					<span class="world-date" id="newYorkDate">Monday, 01 January</span>
+					<span class="city-label">New York · EST</span>
+				</article>
+				<article class="world-clock">
+					<div class="country-line"><span class="country-dot"></span><span>Japan</span></div>
+					<strong id="tokyoTime">00:00:00</strong>
+					<span class="world-date" id="tokyoDate">Monday, 01 January</span>
+					<span class="city-label">Tokyo · JST</span>
+				</article>
+			</div>
+		</section>
+		<p class="timezone" id="timezone">Your local timezone</p>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>

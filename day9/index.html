@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="app-shell">
+        <section class="hero-panel">
+            <div>
+                <p class="eyebrow">Academic records</p>
+                <h1>Student<br><span>Management</span></h1>
+                <p class="hero-copy">Keep every learner's progress organized in one clear view.</p>
+            </div>
+            <div class="hero-mark" aria-hidden="true">✦</div>
+        </section>
+
+        <section class="content-panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Add a record</p>
+                    <h2>Student details</h2>
+                </div>
+                <p class="required-note">All fields are required</p>
+            </div>
+
+            <form id="studentForm" class="student-form">
+                <input type="hidden" id="editingId">
+                <label>
+                    Student name
+                    <input type="text" id="studentName" placeholder="e.g. Aisha Khan" pattern="[A-Za-z ]+" title="Student name can contain alphabets and spaces only" required>
+                </label>
+                <label>
+                    Roll number
+                    <input type="text" id="rollNo" inputmode="numeric" pattern="[0-9]+" title="Roll number can contain numbers only" placeholder="e.g. 024" required>
+                </label>
+                <label>
+                    Course
+                    <select id="course" required>
+                        <option value="" selected disabled>Select a course</option>
+                        <option>Computer Science</option>
+                        <option>Business Administration</option>
+                        <option>Data Science</option>
+                        <option>Graphic Design</option>
+                        <option>Information Technology</option>
+                    </select>
+                </label>
+                <label>
+                    Marks <span class="label-hint">0–100</span>
+                    <input type="number" id="marks" min="0" max="100" placeholder="e.g. 86" required>
+                </label>
+                <button class="primary-button" type="submit" id="submitButton">Add student <span>→</span></button>
+                <button class="cancel-button" type="button" id="cancelButton" hidden>Cancel edit</button>
+            </form>
+
+            <div class="records-heading">
+                <div>
+                    <p class="eyebrow">Student directory</p>
+                    <h2>Class overview</h2>
+                </div>
+                <label class="search-field">
+                    <span aria-hidden="true">⌕</span>
+                    <input type="search" id="searchInput" placeholder="Search by name or roll no">
+                </label>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card"><span>Total students</span><strong id="totalStudents">0</strong></article>
+                <article class="stat-card accent-card"><span>Average marks</span><strong><span id="averageMarks">0</span><small>/ 100</small></strong></article>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Roll no</th><th>Name</th><th>Course</th><th>Marks</th><th>Grade</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="studentTableBody"></tbody>
+                </table>
+                <p class="empty-state" id="emptyState">No students found. Add a record above to get started.</p>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
