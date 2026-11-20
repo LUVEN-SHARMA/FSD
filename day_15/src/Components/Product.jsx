@@ -7,16 +7,16 @@ const Product = ({ products }) => {
         display:"grid",
         gridTemplateColumns:"auto auto auto",
     }}>
-      {products.map((products) =>
+      {products.map((product) =>
         <div style={{
             border:"2px solid black",
             textAlign:"center"
-        }}>
-          <img src={products.thumbnail} alt={products.title} />
-          <h1>{products.title}</h1>
-          <p>{products.description}</p>
-          <h2>{products.price}</h2>
-          <h2>{products.rating}</h2>
+        }} key={product.id}>
+          <img src={product.thumbnail} alt={product.title} />
+          <h1>{product.title}</h1>
+          <p>{product.description}</p>
+          <h2>{product.price}</h2>
+          <h2>{product.rating}</h2>
         </div>
       )}
     </div>
